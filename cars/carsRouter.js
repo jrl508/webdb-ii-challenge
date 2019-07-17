@@ -2,6 +2,8 @@ const express = require('express');
 const router = express.Router();
 const cars = require('./carsDb');
 
+router.use(express.json());
+
 //GET
 
 router.get('/', (req,res) => {
@@ -44,6 +46,6 @@ router.post('/', (req,res) => {
             res.status(500).json(err)
             console.log(err)
         })
-})
+});
 
 module.exports = router;
